@@ -7,3 +7,13 @@ curl http://localhost:5000/review/1
 {
     "sulistyo": "This is an excellent book"
 }
+
+curl -X PUT "http://localhost:5000/customer/auth/review/1?review=This%20book%20is%20even%20better%20after%20reading%20it%20again" -b cookies.txt
+
+{"message":"Review successfully posted"}
+
+curl http://localhost:5000/review/1
+
+{
+    "sulistyo": "This book is even better after reading it again"
+}
